@@ -1,0 +1,9 @@
+<div>=========================</div>
+<input type="text" [ngModel]="name" (ngModelChange)="name = $event">
+
+<!-- chỉ có thể dùng static : true khi comp tham chiếu không nằm trong 1 structural directive nào (ngIf) -->
+<app-toggle #toggleComp [isChecked]="!isChecked"></app-toggle>
+
+<app-toggle #toggleComponent [isChecked]="!isChecked"></app-toggle>
+
+<button #buttonToggle (click)="toggleComp.toggle(isChecked)">Toggle</button>

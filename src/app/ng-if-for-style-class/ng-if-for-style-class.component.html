@@ -1,0 +1,37 @@
+<div>=========================</div>
+<br>
+<br>
+<ng-container *ngIf="counter != 1;else showOff">
+
+</ng-container>
+
+<ng-template #showOff>
+    Count not 1
+</ng-template>
+
+<div>=========================</div>
+
+<!-- odd : true nếu như vị trí lẻ -->
+<!-- event : true nếu như vị trí chẵn -->
+
+<div *ngFor="let user of users; let i = index; count as total; first as isFirst; last as isLast; even as isEven; odd as isOdd">
+    <span>{{user.name}} - {{user.age}}</span>
+    <br>
+    <span>Total {{total}}</span>
+    <br>
+    <span>Index {{i}}</span>
+    <br>
+    <span *ngIf="isFirst">This is first</span>
+    <br>
+    <span *ngIf="isLast">this is Last</span>
+    <br>
+    <span *ngIf="isOdd">this is Odd</span>
+    <br>
+    <span *ngIf="isEven">this is Even</span>
+</div>
+
+<!-- class object [class]="{'ten class': expression}"" -->
+
+<div (click)="isRed = !isRed; isYellow = !isYellow" [class]="{'red-border': isRed , 'background-yellow': isYellow}">Box</div>
+
+<div [style.color]="isRed ? 'red' : 'yellow'">Style</div>
